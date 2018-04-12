@@ -1,0 +1,19 @@
+<h1>改行単位で,区切りにする</h1>
+<textarea name="separate" id="separate" style="width: 800px; height: 200px;"></textarea></br>
+<input type="submit" value="変換" onclick="onButtonClick();" style="width: 100px; height: 50px; margin-right: 100px;"><input type="reset" value="リセット" onclick="onCancelButtonClick()" style="width: 100px; height: 50px"></br>
+<div id="result">
+	<textarea name="output" id="output" style="width: 800px; height: 400px;"></textarea>
+</div>
+
+<script type="text/javascript">
+	function onButtonClick() {
+        target = document.getElementById("output");
+        textBox = document.getElementById("separate");
+        output = textBox.value.replace(/\r?\n/g,",");
+        target.value = output;
+    }
+    function onCancelButtonClick() {
+    	document.getElementById("separate").value = "";
+    	document.getElementById("output").value = "";
+    }        
+</script>
